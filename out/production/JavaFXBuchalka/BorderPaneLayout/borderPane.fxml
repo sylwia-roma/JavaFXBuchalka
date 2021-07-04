@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="BorderPaneLayout.Controller">
+    <top>
+        <Label text="This label is in the top position" alignment="center"
+               BorderPane.alignment="center"
+        style="-fx-border-color: blue; -fx-border-width: 3; -fx-border-style: dashed"/>
+    </top>
+    <left>
+        <Label text="This label is in the left position" alignment="center"/>
+    </left>
+    <right>
+        <Label text="This label is in the right position"/>
+    </right>
+    <center>
+        <Label text="This label is in the center posiition and has really loooooong position"/>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="bottom_right">
+            <padding>
+                <Insets bottom="10" right="10"/>
+            </padding>
+            <Button text="Okay" prefWidth="90"/>
+            <Button text="Cancel" prefWidth="90"/>
+            <Button text="Help" prefWidth="90"/>
+
+        </HBox>
+    </bottom>
+
+
+
+</BorderPane>
+
+

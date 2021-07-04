@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<?import javafx.collections.FXCollections?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="ComboBox.Controller"
+          prefHeight="400.0" prefWidth="600.0">
+
+    <Button GridPane.rowIndex="0" GridPane.columnIndex="0" text="Click me">
+        <graphic>
+            <ImageView>
+                <Image url="@/toolbarButtonGraphics/general/Information24.gif" />
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="1" text="This is a label"
+           textFill="blue" >
+        <font>
+            <Font name="Arial italic" size="12"/>
+        </font>
+        <graphic>
+            <ImageView>
+                <Image url="@/toolbarButtonGraphics/general/TipOfTheDay24.gif" />
+            </ImageView>
+        </graphic>
+    </Label>
+
+
+    <!--    jeśli chcemy aby tylko jeden przycisk był dostępny-->
+    <fx:define>
+        <ToggleGroup fx:id="colorToggleGroup"/>
+    </fx:define>
+    <VBox GridPane.rowIndex="0" GridPane.columnIndex="2">
+        <RadioButton toggleGroup="$colorToggleGroup"/>
+        <RadioButton toggleGroup="$colorToggleGroup" selected="true"/>
+        <RadioButton  text="Green" toggleGroup="$colorToggleGroup"/>
+
+    </VBox>
+
+
+    <VBox GridPane.rowIndex="0" GridPane.columnIndex="3">
+        <CheckBox text="Dog"/>
+        <CheckBox text="Cat"/>
+        <CheckBox text="Bird"/>
+    </VBox>
+
+    <HBox GridPane.rowIndex="0" GridPane.columnIndex="4">
+        <ToggleButton text="Toggle Me" />
+        <ToggleButton text="Hello" />
+        <ToggleButton text="Good Bye" />
+    </HBox>
+
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <PasswordField GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <ComboBox GridPane.rowIndex="1" GridPane.columnIndex="2" GridPane.columnSpan="2" editable="true">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="This is Option 1"/>
+                <String fx:value="This is Option 2"/>
+                <String fx:value="This is Option 3"/>
+                <String fx:value="This is Option 4"/>
+                <String fx:value="This is Option 5"/>
+            </FXCollections>
+        </items>
+        <value>
+            <String fx:value="This is Option 4"/>
+        </value>
+    </ComboBox>
+
+    <ChoiceBox GridPane.rowIndex="1" GridPane.columnIndex="5">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="This is Option 1"/>
+                <String fx:value="This is Option 2"/>
+                <String fx:value="This is Option 3"/>
+                <String fx:value="This is Option 4"/>
+                <String fx:value="This is Option 5"/>
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+
+    <Slider GridPane.columnIndex="0" GridPane.rowIndex="7" GridPane.columnSpan="4" min="0" max="100" showTickLabels="true"
+            showTickMarks="true" minorTickCount="4" snapToTicks="true"></Slider>
+    <Spinner GridPane.columnIndex="0" GridPane.rowIndex="8" min="0" max="100" editable="true" initialValue="50"/>
+
+    <ColorPicker GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+
+    <DatePicker GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+
+    <Accordion GridPane.columnIndex="2" GridPane.rowIndex="11" GridPane.columnSpan="2"
+    expandedPane="tp3">
+        <panes>
+            <TitledPane text="Titled 1 Panel">
+                <Label text="Label in the titled panel"/>
+            </TitledPane>
+            <TitledPane text="Titled 2 Panel">
+                <Label text="Label in the titled panel"/>
+            </TitledPane>
+            <TitledPane fx:id="tp3" text="Titled 3 Panel">
+                <Label text="Label in the titled panel"/>
+            </TitledPane>
+        </panes>
+    </Accordion>
+
+
+</GridPane>

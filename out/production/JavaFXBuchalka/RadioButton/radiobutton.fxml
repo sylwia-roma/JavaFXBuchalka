@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="RadioButton.Controller"
+          prefHeight="400.0" prefWidth="600.0">
+
+
+    <Button GridPane.rowIndex="0" GridPane.columnIndex="0" text="Click me">
+        <graphic>
+            <ImageView>
+                <Image url="@/toolbarButtonGraphics/general/Information24.gif" />
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="1" text="This is a label"
+    textFill="blue" >
+        <font>
+            <Font name="Arial italic" size="12"/>
+        </font>
+        <graphic>
+            <ImageView>
+                <Image url="@/toolbarButtonGraphics/general/TipOfTheDay24.gif" />
+            </ImageView>
+        </graphic>
+    </Label>
+
+
+<!--    jeśli chcemy aby tylko jeden przycisk był dostępny-->
+    <fx:define>
+        <ToggleGroup fx:id="colorToggleGroup"/>
+    </fx:define>
+
+    <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="2" text="Red" toggleGroup="$colorToggleGroup"/>
+    <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="3" text="Blue" toggleGroup="$colorToggleGroup" selected="true"/>
+    <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="4" text="Green" toggleGroup="$colorToggleGroup"/>
+    <CheckBox text="Subscribe to out newsletter" GridPane.rowIndex="0" GridPane.columnIndex="5" indeterminate="true"/>
+
+    <VBox GridPane.rowIndex="0" GridPane.columnIndex="6">
+        <CheckBox text="Dog"/>
+        <CheckBox text="Cat"/>
+        <CheckBox text="Bird"/>
+    </VBox>
+
+    <HBox GridPane.rowIndex="0" GridPane.columnIndex="7">
+        <ToggleButton text="Toggle Me" />
+        <ToggleButton text="Hello" />
+        <ToggleButton text="Good Bye" />
+    </HBox>
+
+</GridPane>
